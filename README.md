@@ -39,4 +39,4 @@ There are also two other files:
 
 ## Licence
 
-Copyright (c) 2014, Alexander Nielsen, MIT Licence. See the `LICENCE.md` file for more details.
+**Copyright (c) 2014, Alexander Nielsen, MIT Licence.** See the `LICENCE.md` file for more details.
