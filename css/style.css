@@ -1,0 +1,25 @@
+h1 {
+	text-align: center;
+}
+
+.licence-heading, .licence-heading:hover {
+	color: inherit;
+}
+
+.lead {
+	font-size: 150%;
+}
+
+.download, .github {
+	width: 100%;
+}
+
+.download img {
+	margin-top: -1px;
+}
+
+@media (max-width:319px) {
+	.download img {
+		display: none;
+	}
+}

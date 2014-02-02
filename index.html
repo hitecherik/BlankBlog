@@ -7,8 +7,81 @@
 
 	<link rel="stylesheet" href="css/normalize.min.css">
 	<link rel="stylesheet" href="css/foundation.min.css">
+	<link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-	
+<body class="row">
+	<div class="column large-12 small-12 medium-12">
+		<h1>BlankBlog</h1>
+		
+		<hr>
+	</div>
+
+	<div class="clearfix">
+		<div class="column large-7 small-12 medium-6">
+			<h2>Hi there!</h2>
+			
+			<p class="lead">Blank Blog is a blogging platform built with PHP without all the hassle of a complicated one with many features.</p>
+
+			<p>The main aims of BlankBlog are:</p>
+			<ul>
+				<li>Keep it simple</li>
+				<li>Make it easy to build upon</li>
+			</ul>
+
+			<p>To do this, I haven&#39;t included any stylesheets or external libraries and there are only four settings: MySQL details, password (for posting), blog name and blog URL.</p>
+		</div>
+
+		<div class="column large-5 small-12 medium-6">
+			<h2>Download</h2>
+
+			<p>The current version is <strong>0.1</strong>.</p>
+			
+			<a href="http://github.com/hitecherik/BlankBlog/archive/master.zip" class="button large download"><img src="img/download.png" alt=""> Download BlankBlog</a>
+			<a href="http://github.com/hitecherik/BlankBlog" class="button secondary github">View on GitHub</a>
+		</div>
+
+		<div class="column large-7 small-12 medium-6">
+			<h2>Building on BlankBlog</h2>
+
+			<p>BlankBlog is very easy to build on. There are 7 main PHP files:</p>
+			<ul>
+				<li><code>footer.php</code> - footer for every page</li>
+				<li><code>header.php</code> - header for every page</li>
+				<li><code>index.php</code> - blog home page</li>
+				<li><code>fetch.php</code> - fetches all blog posts for home page</li>
+				<li><code>post-form.php</code> - form to create post</li>
+				<li><code>post.php</code> - submits post and displays error/success message</li>
+				<li><code>posts.php</code> - page for individual blog posts</li>
+			</ul>
+
+			<p>There are also two other files:</p>
+			<ul>
+				<li><code>settings.php</code> - all of the MySQL and blog settings, used for every page</li>
+				<li><code>setup.php</code> - run this once to install the blog <em>(you can delete this later if you want)</em></li>
+			</ul>
+		</div>
+
+		<div class="column large-5 small-12 medium-6">
+			<h2>Installing BlankBlog</h2>
+
+			<p>First, open the <code>settings.php</code> file. You can change these settings here:</p>
+			<ul>
+				<li>MySQL details - <code>$mysql</code> array <em>(you&#39;ll need a MySQL database, but not a table)</em></li>
+				<li>Password - <code>$password</code> variable</li>
+				<li>Blog Title - <code>$blogtitle</code> variable</li>
+				<li>Blog URL - <code>$blogurl</code> variable</li>
+			</ul>
+
+			<p>Once you&#39;ve saved these, open <code>setup.php</code> in the browser. If you see a success message, you&#39;re good to go!</p>
+		</div>
+	</div>
+
+	<div class="column large-12 small-12 medium-12">
+		<hr>
+
+		<h2>Licence</h2>
+		
+		<p><strong>Copyright &copy; Alexander Nielsen, 2014, under the MIT Licence.</strong> See <a href="licence.html">this page</a> for more details.
+	</div>
 </body>
 </html>
