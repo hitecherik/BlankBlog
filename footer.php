@@ -1,5 +1,5 @@
 	<footer>
-		<p>Powered by BlankBlog, framework copyright &copy; Alexander Nielsen, <?php echo date("Y"); ?></p>
+		<p>Powered by <a href="#" target="_blank">BlankBlog</a>.</p>
 	</footer>
 </body>
 </html>
