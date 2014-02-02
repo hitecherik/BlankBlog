@@ -5,10 +5,9 @@
 The main aims of BlankBlog are:
 
 - Keep it simple
-- Don't use external libraries
 - Make it easy to build upon
 
-To do this, I haven't included any stylesheets and there are only four settings: MySQL details, password (for posting), blog name and blog URL.
+To do this, I haven't included any stylesheets or external libraries and there are only four settings: MySQL details, password (for posting), blog name and blog URL.
 
 ## Installing BlankBlog
 
@@ -40,4 +39,4 @@ There are also two other files:
 
 ## Licence
 
-This work is licenced under the MIT Licence. See the `LICENCE.md` file for more details.
+Copyright (c) 2014, Alexander Nielsen, MIT Licence. See the `LICENCE.md` file for more details.
