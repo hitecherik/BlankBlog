@@ -1,4 +1,6 @@
 <?php
+	// Rename this file to settings.php and add your data to the variables
+
 	// MySQL Settings
 	$mysql = array(
 		"username" => "hitecherik", // mysql username
