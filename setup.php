@@ -1,14 +1,10 @@
 <?php
 	include 'settings.php';
 	
-	$query = "CREATE TABLE `" . $mysql["table-name"] . "` (`ID` INT, `Title` VARCHAR(255),`Content` LONGTEXT,`Date` VARCHAR(8));";
+	$query = "CREATE TABLE `" . $mysql["table-name"] . "` (`ID` INT UNIQUE, `Title` VARCHAR(255),`Content` LONGTEXT,`Date` VARCHAR(8));";
 	
-	if($mysql["host"]=="localhost"){
-		mysql_connect(localhost, $mysql["username"], $mysql["password"]);
-	} else {
-		mysql_connect($mysql["host"], $mysql["username"], $mysql["password"]);
-	}
-	
+	mysql_connect($mysql["host"], $mysql["username"], $mysql["password"]);
+		
 	@mysql_select_db($mysql["database-name"]) or die("Unable to select database");
 	$qresult = mysql_query($query);
 
@@ -29,5 +25,4 @@
 	<?php
 		}
 	?>
-	<p><a href="index.php">Go to homepage</a></p>
 <?php include "footer.php"; ?>

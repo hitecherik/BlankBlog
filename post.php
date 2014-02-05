@@ -6,12 +6,8 @@
 	$date = date("d/m/y");
 	
 	if($_POST['password']==$password){
-		if($mysql["host"]=="localhost"){
-			mysql_connect(localhost, $mysql["username"], $mysql["password"]);
-		} else {
-			mysql_connect($mysql["host"], $mysql["username"], $mysql["password"]);
-		}
-		
+		mysql_connect($mysql["host"], $mysql["username"], $mysql["password"]);
+				
 		@mysql_select_db($mysql["database-name"]) or die("Unable to select database");
 		
 		$id = mysql_num_rows(mysql_query("SELECT * FROM `" . $mysql["table-name"] . "`")) + 1;
@@ -35,5 +31,4 @@
 			}
 		?>
 	</p>
-	<p><a href="index.php">Back to homepage</a></p>
-<?php echo "footer.php"; ?>
+<?php include "footer.php"; ?>
