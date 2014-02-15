@@ -1,7 +1,9 @@
 <?php
 	include 'settings.php';
+
+	$id = $_GET["p"];
 	
-	$query = "SELECT * from " . $mysql["table-name"] . " WHERE ID = " . $_GET["p"];
+	$query = "SELECT * from " . $mysql["table-name"] . " WHERE ID = $id";
 	
 	mysql_connect($mysql["host"], $mysql["username"], $mysql["password"]);
 		
@@ -9,7 +11,7 @@
 	
 	$qresult = mysql_query($query);
 	
-	if(mysql_numrows($qresult) == 0){
+	if(mysql_numrows($qresult) == 0) {
 		header("Location: $blogurl");
 	}
 	
@@ -23,6 +25,8 @@
 ?>	
 	<article class="post">
 		<h2 class="post-title"><?php echo $title; ?></h2>
+
+		<p class="update-post"><a href="<?php echo "$blogurl/update-form.php?p=$id"; ?>">Update Post</a></p>
 		
 		<div class="post-date">
 			<?php echo $date; ?>
