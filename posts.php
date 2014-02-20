@@ -1,5 +1,5 @@
 <?php
-	include 'settings.php';
+	include "settings.php";
 
 	$id = $_GET["p"];
 	
@@ -26,7 +26,7 @@
 	<article class="post">
 		<h2 class="post-title"><?php echo $title; ?></h2>
 
-		<p class="update-post"><a href="<?php echo "$blogurl/update-form.php?p=$id"; ?>">Update Post</a></p>
+		<p class="update-post"><a href="<?php echo "$blogurl/update-form.php?p=$id"; ?>">Update Post</a> | <a href="<?php echo "$blogurl/delete-form.php?p=$id"; ?>">Delete Post</a></p>
 		
 		<div class="post-date">
 			<?php echo $date; ?>

@@ -10,8 +10,8 @@
 				
 		@mysql_select_db($mysql["database-name"]) or die("Unable to select database");
 		
-		$id = mysql_num_rows(mysql_query("SELECT * FROM `" . $mysql["table-name"] . "`")) + 1;
-		$query = "INSERT INTO " . $mysql["table-name"] . "(ID,Title,Content,Date)VALUES('".$id."','".$title."','".$content."','".$date."')";
+		$id = mysql_result(mysql_query("SELECT MAX(`ID`) FROM `" . $mysql["table-name"] . "`"), 0, "MAX(`ID`)") + 1;
+		$query = "INSERT INTO " . $mysql["table-name"] . "(ID,Title,Content,Date)VALUES('$id','$title','$content','$date')";
 		
 		$qresult = mysql_query($query);
 	} else {

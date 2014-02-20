@@ -13,7 +13,7 @@
 		
 		$query = "UPDATE " . $mysql["table-name"] . " SET `Title` = '$title', `Content` = '$content', `Date` = '$date' WHERE `ID` = $id";
 		
-		$qresult = mysql_query($query) or die("Post not updated!");
+		$qresult = mysql_query($query);
 	} else {
 		$qresult = false;
 	}
