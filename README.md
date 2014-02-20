@@ -22,7 +22,7 @@ Once you've saved these, open `setup.php` in the browser. If you see a success m
 
 ## Building on BlankBlog
 
-BlankBlog is very easy to build on. There are 7 main PHP files:
+BlankBlog is very easy to build on. There are 13 main PHP files:
 
 - `footer.php` - footer for every page
 - `header.php` - header for every page
@@ -31,11 +31,14 @@ BlankBlog is very easy to build on. There are 7 main PHP files:
 - `post-form.php` - form to create post
 - `post.php` - submits post and displays error/success message
 - `posts.php` - page for individual blog posts
-
-There are also two other files:
-
+- `update-form.php` - form to edit individual post
+- `update.php` - updates post and displays error/success message
+- `delete-form.php` - enter password to delete individual post
+- `delete.php` - deletes post and displays error/success message
 - `settings.php` - all of the MySQL and blog settings, used for every page
 - `setup.php` - run this once to install the blog *(you can delete this later if you want)*
+
+There's also a `settings-sample.php` file in your BlankBlog download. Change the settings in this file and rename it to `settings.php`.
 
 ## Licence
 
