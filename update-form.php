@@ -1,7 +1,9 @@
 <?php
 	include "settings.php";
 
-	$id = $_GET["p"];
+	preg_match("/^\d+/", $_GET["p"], $matches);
+
+	$id = $matches[0];
 
 	$query = "SELECT * from " . $mysql["table-name"] . " WHERE ID = $id";
 

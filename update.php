@@ -4,7 +4,10 @@
 	$title = str_replace("'", "\'", $_POST["title"]);
 	$content = str_replace("'", "\'", $_POST["content"]);
 	$date = $_POST["date"];
-	$id = $_GET["id"];
+	
+	preg_match("/^\d+/", $_GET["p"], $matches);
+
+	$id = $matches[0];
 	
 	if($_POST["password"] == $password) {
 		mysql_connect($mysql["host"], $mysql["username"], $mysql["password"]);
