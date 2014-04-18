@@ -1,16 +1,13 @@
 <?php
 	include "settings.php";
+	include "get_mysql.php";
 
 	preg_match("/^\d+/", $_GET["p"], $matches);
 
 	$id = $matches[0];
 
+	get_mysql();
 	$query = "SELECT * from " . $mysql["table-name"] . " WHERE ID = $id";
-
-	mysql_connect($mysql["host"], $mysql["username"], $mysql["password"]);
-
-	@mysql_select_db($mysql["database-name"]) or die("Unable to select database.");
-
 	$qresult = mysql_query($query);
 
 	if(mysql_numrows($qresult) == 0) {

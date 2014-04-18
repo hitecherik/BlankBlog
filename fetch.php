@@ -1,18 +1,16 @@
 <?php
 	include 'settings.php';
+	include 'get_mysql.php';
 	
-	$query = "SELECT * from " . $mysql["table-name"];
 	$ids = array("blank");
 	$titles = array("blank");
 	$contents = array("blank");
 	$dates = array("00/00/00");
 	$output = "";
 	
-	mysql_connect($mysql["host"], $mysql["username"], $mysql["password"]);
-	
-	@mysql_select_db($mysql["database-name"]) or die("Unable to select database");
-		
-	$qresult = mysql_query($query) or die("It doesn't look like you've run <a href='$blogurl/setup.php'>setup.php</a> yet!");
+	get_mysql();
+	$query = "SELECT * from " . $mysql["table-name"];
+	$qresult = mysql_query($query) or die("It doesn't likook le you've run <a href='$blogurl/setup.php'>setup.php</a> yet!");
 	$numrows = mysql_numrows($qresult);
 	
 	for($i=0;$i<$numrows;$i++){

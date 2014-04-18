@@ -1,5 +1,6 @@
 <?php 
 	include "settings.php";
+	include "get_mysql.php";
 	
 	$title = str_replace("'", "\'", $_POST["title"]);
 	$content = str_replace("'", "\'", $_POST["content"]);
@@ -10,12 +11,8 @@
 	$id = $matches[0];
 	
 	if($_POST["password"] == $password) {
-		mysql_connect($mysql["host"], $mysql["username"], $mysql["password"]);
-				
-		@mysql_select_db($mysql["database-name"]) or die("Unable to select database");
-		
+		get_mysql();		
 		$query = "UPDATE " . $mysql["table-name"] . " SET `Title` = '$title', `Content` = '$content', `Date` = '$date' WHERE `ID` = $id";
-		
 		$qresult = mysql_query($query);
 	} else {
 		$qresult = false;

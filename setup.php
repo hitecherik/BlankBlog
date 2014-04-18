@@ -1,11 +1,9 @@
 <?php
-	include 'settings.php';
+	include "settings.php";
+	include "get_mysql.php";
 	
+	get_mysql();
 	$query = "CREATE TABLE `" . $mysql["table-name"] . "` (`ID` INT UNIQUE, `Title` VARCHAR(255),`Content` LONGTEXT,`Date` VARCHAR(8));";
-	
-	mysql_connect($mysql["host"], $mysql["username"], $mysql["password"]);
-		
-	@mysql_select_db($mysql["database-name"]) or die("Unable to select database");
 	$qresult = mysql_query($query);
 
 	$pagetitle = "Setup :: $blogtitle";

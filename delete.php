@@ -1,5 +1,6 @@
 <?php 
 	include "settings.php";
+	include "get_mysql.php";
 
 	preg_match("/^\d+/", $_GET["p"], $matches);
 
@@ -7,8 +8,7 @@
 	$pass = $_POST["password"];
 
 	if ($password == $pass) {
-		mysql_connect($mysql["host"], $mysql["username"], $mysql["password"]);
-		@mysql_select_db($mysql["database-name"]) or die("Unable to select database.");
+		get_mysql();
 		$query = "DELETE FROM `" . $mysql["table-name"] . "` WHERE `ID` = $id";
 		$qresult = mysql_query($query);
 	} else {

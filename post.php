@@ -1,15 +1,13 @@
 <?php
 	include 'settings.php';
+	include "get_mysql.php";
 	
 	$title = str_replace("'", "\'", $_POST["title"]);
 	$content = str_replace("'", "\'", $_POST["content"]);
 	$date = date("d/m/y");
 	
 	if($_POST['password']==$password){
-		mysql_connect($mysql["host"], $mysql["username"], $mysql["password"]);
-				
-		@mysql_select_db($mysql["database-name"]) or die("Unable to select database");
-		
+		get_mysql();
 		$id = mysql_result(mysql_query("SELECT MAX(`ID`) FROM `" . $mysql["table-name"] . "`"), 0, "MAX(`ID`)") + 1;
 		$query = "INSERT INTO " . $mysql["table-name"] . "(ID,Title,Content,Date)VALUES('$id','$title','$content','$date')";
 		
