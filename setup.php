@@ -2,7 +2,7 @@
 	include "settings.php";
 	include "get_mysql.php";
 	
-	get_mysql();
+	get_mysql($mysql);
 	$query = "CREATE TABLE `" . $mysql["table-name"] . "` (`ID` INT UNIQUE, `Title` VARCHAR(255),`Content` LONGTEXT,`Date` VARCHAR(8));";
 	$qresult = mysql_query($query);
 

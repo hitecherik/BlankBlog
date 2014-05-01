@@ -6,12 +6,12 @@
 	$content = str_replace("'", "\'", $_POST["content"]);
 	$date = $_POST["date"];
 	
-	preg_match("/^\d+/", $_GET["p"], $matches);
+	preg_match("/^\d+/", $_GET["id"], $matches);
 
 	$id = $matches[0];
 	
 	if($_POST["password"] == $password) {
-		get_mysql();		
+		get_mysql($mysql);		
 		$query = "UPDATE " . $mysql["table-name"] . " SET `Title` = '$title', `Content` = '$content', `Date` = '$date' WHERE `ID` = $id";
 		$qresult = mysql_query($query);
 	} else {

@@ -5,7 +5,7 @@
 	preg_match("/^\d+/", $_GET["p"], $matches);
 	$id = $matches[0];
 	
-	get_mysql();
+	get_mysql($mysql);
 	$query = "SELECT * from " . $mysql["table-name"] . " WHERE ID = $id";
 	$qresult = mysql_query($query);
 	
