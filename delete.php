@@ -8,7 +8,7 @@
 	$pass = $_POST["password"];
 
 	if ($password == $pass) {
-		get_mysql($mysql);
+		get_mysql();
 		$query = "DELETE FROM `" . $mysql["table-name"] . "` WHERE `ID` = $id";
 		$qresult = mysql_query($query);
 	} else {

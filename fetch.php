@@ -8,7 +8,7 @@
 	$dates = array("00/00/00");
 	$output = "";
 	
-	get_mysql($mysql);
+	get_mysql();
 	$query = "SELECT * from " . $mysql["table-name"];
 	$qresult = mysql_query($query) or die("It doesn't likook le you've run <a href='$blogurl/setup.php'>setup.php</a> yet!");
 	$numrows = mysql_numrows($qresult);

@@ -11,7 +11,7 @@
 	$id = $matches[0];
 	
 	if($_POST["password"] == $password) {
-		get_mysql($mysql);		
+		get_mysql();		
 		$query = "UPDATE " . $mysql["table-name"] . " SET `Title` = '$title', `Content` = '$content', `Date` = '$date' WHERE `ID` = $id";
 		$qresult = mysql_query($query);
 	} else {

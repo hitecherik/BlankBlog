@@ -6,7 +6,7 @@
 
 	$id = $matches[0];
 
-	get_mysql($mysql);
+	get_mysql();
 	$query = "SELECT * from " . $mysql["table-name"] . " WHERE ID = $id";
 	$qresult = mysql_query($query);
 
