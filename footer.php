@@ -1,3 +1,8 @@
+<?php
+	if (isset($db)) {
+		$db->close();
+	}
+?>
 	<footer>
 		<?php if(!isset($indexpage)) { ?>
 			<p><a href="index.php">Go to homepage</a></p>

@@ -1,21 +1,20 @@
 <?php
 	include "settings.php";
-	include "get_mysql.php";
 
 	preg_match("/^\d+/", $_GET["p"], $matches);
 	$id = $matches[0];
 	
-	get_mysql();
-	$query = "SELECT * from " . $mysql["table-name"] . " WHERE ID = $id";
-	$qresult = mysql_query($query);
+	$db = new SQLite3($sql["database-file"]);
 	
-	if(mysql_numrows($qresult) == 0) {
+	if((int) $db->querySingle("SELECT COUNT(*) FROM {$sql['table-name']} WHERE ID = $id") == 0) {
 		header("Location: $blogurl");
 	}
 	
-	$title = mysql_result($qresult, 0, "Title");
-	$content = mysql_result($qresult, 0, "Content");
-	$date = mysql_result($qresult, 0, "Date");
+	$result = $db->querySingle("SELECT Title, Content, Date FROM {$sql['table-name']} WHERE ID = $id", true);
+	
+	$title = $result["Title"];
+	$content = $result["Content"];
+	$date = $result["Date"];
 
 	$pagetitle = "$title :: $blogtitle";
 
