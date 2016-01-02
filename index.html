@@ -28,7 +28,7 @@
 				<li>Make it easy to build upon</li>
 			</ul>
 
-			<p>To do this, I haven&#39;t included any stylesheets or external libraries and there are only two settings: your password and the blog title.</p>
+			<p>To do this, I haven&#39;t included any stylesheets or external libraries and there are only two necessary settings: your password and blog title. You don't even need a MySQL database.</p>
 		</div>
 
 		<div class="column large-5 small-12 medium-6">
@@ -45,11 +45,12 @@
 		<div class="column large-7 small-12 medium-6">
 			<h2>Building on BlankBlog</h2>
 
-			<p>BlankBlog is very easy to build on. There are 13 main PHP files:</p>
+			<p>BlankBlog is very easy to build on. There are 14 main PHP files:</p>
 
 			<ul>
 				<li><code>footer.php</code> - footer for every page</li>
 				<li><code>header.php</code> - header for every page</li>
+				<li><code>blogurl.php</code> - script that finds the blog&#39;s root url, used in almost every page</li>
 				<li><code>index.php</code> - blog home page</li>
 				<li><code>fetch.php</code> - fetches all blog posts for home page</li>
 				<li><code>post-form.php</code> - form to create post</li>
@@ -59,7 +60,7 @@
 				<li><code>update.php</code> - updates post and displays error/success message</li>
 				<li><code>delete-form.php</code> - enter password to delete individual post</li>
 				<li><code>delete.php</code> - deletes post and displays error/success message</li>
-				<li><code>settings.php</code> - all of the MySQL and blog settings, used for every page</li>
+				<li><code>settings.php</code> - all of the blog settings, used for every page</li>
 				<li><code>setup.php</code> - run this once to install the blog <em>(you can delete this later if you want)</em></li>
 			</ul>
 
@@ -69,13 +70,13 @@
 		<div class="column large-5 small-12 medium-6">
 			<h2>Installing BlankBlog</h2>
 
-			<p>First, open the <code>settings.php</code> file. You can change these settings here:</p>
+			<p>First, open the <code>settings.php</code> file (if there isn't one, rename <code>settings-sample.php</code> to <code>settings.php</code>). You can change these settings here:</p>
 			<ul>
-				<li>MySQL details - <code>$mysql</code> array <em>(you&#39;ll need a MySQL database, but not a table)</em></li>
 				<li>Password - <code>$password</code> variable</li>
 				<li>Blog Title - <code>$blogtitle</code> variable</li>
-				<li>Blog URL - <code>$blogurl</code> variable</li>
 			</ul>
+			
+			<p>Changing the <code>$sql</code> and <code>$dateformat</code> variables is optional, but <strong>don't</strong> delete them from the file.</p>
 
 			<p>Once you&#39;ve saved these, open <code>setup.php</code> in the browser. If you see a success message, you&#39;re good to go!</p>
 		</div>
@@ -86,7 +87,9 @@
 
 		<h2>Licence</h2>
 		
-		<p><strong>Copyright &copy; Alexander Nielsen, 2014-2016, under the MIT Licence.</strong> See <a href="licence.html">this page</a> for more details.
+		<p><strong>Copyright &copy; Alexander Nielsen, 2014-2016, under the MIT Licence.</strong> See <a href="licence.html">this page</a> for more details.</p>
+		
+		<p>BlankBlog uses <a href="http://parsedown.org">Parsedown</a> for Markdown parsing. See <a href="https://raw.githubusercontent.com/erusev/parsedown/master/LICENSE.txt">this page</a> for the Parsedown licence.</p>
 	</div>
 </body>
 </html>
