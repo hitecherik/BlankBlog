@@ -1,25 +1,22 @@
 <?php
 	include "settings.php";
+	include "parsedown/Parsedown.php";
+	include "blogurl.php";
 
 	preg_match("/^\d+/", $_GET["p"], $matches);
-
 	$id = $matches[0];
 	
-	$query = "SELECT * from " . $mysql["table-name"] . " WHERE ID = $id";
+	$db = new SQLite3($sql["database-file"]);
 	
-	mysql_connect($mysql["host"], $mysql["username"], $mysql["password"]);
-		
-	@mysql_select_db($mysql["database-name"]) or die("Unable to select database");
-	
-	$qresult = mysql_query($query);
-	
-	if(mysql_numrows($qresult) == 0) {
+	if((int) $db->querySingle("SELECT COUNT(*) FROM {$sql['table-name']} WHERE ID = $id") == 0) {
 		header("Location: $blogurl");
 	}
 	
-	$title = mysql_result($qresult, 0, "Title");
-	$content = mysql_result($qresult, 0, "Content");
-	$date = mysql_result($qresult, 0, "Date");
+	$result = $db->querySingle("SELECT Title, Content, Date FROM {$sql['table-name']} WHERE ID = $id", true);
+	
+	$title = $result["Title"];
+	$content = $result["Content"];
+	$date = $result["Date"];
 
 	$pagetitle = "$title :: $blogtitle";
 
@@ -35,7 +32,7 @@
 		</div>
 		
 		<div class="post-content">
-			<?php echo $content; ?>
+			<?php echo Parsedown::instance()->text($content); ?>
 		</div>
 	</article>
 <?php include "footer.php"; ?>

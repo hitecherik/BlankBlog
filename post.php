@@ -1,21 +1,31 @@
 <?php
-	include 'settings.php';
+	include "settings.php";
 	
-	$title = str_replace("'", "\'", $_POST["title"]);
-	$content = str_replace("'", "\'", $_POST["content"]);
-	$date = date("d/m/y");
+	$db = new SQLite3($sql["database-file"]);
 	
-	if($_POST['password']==$password){
-		mysql_connect($mysql["host"], $mysql["username"], $mysql["password"]);
-				
-		@mysql_select_db($mysql["database-name"]) or die("Unable to select database");
+	$id = 1;
+	
+	if ((int) $db->querySingle("SELECT COUNT(*) FROM {$sql['table-name']}") > 0) {
+		$ids = [];
+		$id_results = $db->query("SELECT ID FROM {$sql['table-name']}");
 		
-		$id = mysql_result(mysql_query("SELECT MAX(`ID`) FROM `" . $mysql["table-name"] . "`"), 0, "MAX(`ID`)") + 1;
-		$query = "INSERT INTO " . $mysql["table-name"] . "(ID,Title,Content,Date)VALUES('$id','$title','$content','$date')";
+		while ($row = $id_results->fetchArray()) {
+			array_push($ids, (int) $row["ID"]);
+		}
 		
-		$qresult = mysql_query($query);
+		rsort($ids);
+		
+		$id = $ids[0] + 1;
+	}
+	
+	$title = str_replace("'", "''", $_POST["title"]);
+	$content = str_replace("'", "''", $_POST["content"]);
+	$date = date($dateformat);
+	
+	if ($_POST["password"] == $password) {
+		$result = $db->exec("INSERT INTO {$sql['table-name']} (ID, Title, Content, Date) VALUES ($id, '$title', '$content', '$date')");
 	} else {
-		$qresult = false;
+		$result = false;
 	}
 
 	$pagetitle = "$title :: $blogtitle";
@@ -24,7 +34,7 @@
 	<h2>"<?php echo str_replace("\'", "'", $title); ?>" - post creation</h2>
 	<p>
 		<?php
-			if($qresult){
+			if($result){
 				echo "The post was successful.";
 			} else {
 				echo "The post was not successful.</p><p>Ty reloading this page and trying again, or check if you have entered your password correctly.";

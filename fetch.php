@@ -1,32 +1,16 @@
 <?php
-	include 'settings.php';
+	include "settings.php";
+	include "parsedown/Parsedown.php";
+	include "blogurl.php";
 	
-	$query = "SELECT * from " . $mysql["table-name"];
-	$ids = array("blank");
-	$titles = array("blank");
-	$contents = array("blank");
-	$dates = array("00/00/00");
 	$output = "";
 	
-	mysql_connect($mysql["host"], $mysql["username"], $mysql["password"]);
+	$db = new SQLite3($sql["database-file"]);
+	$result = $db->query("SELECT * from {$sql['table-name']} ORDER BY ID DESC") or die("It doesn't look like you've run <a href='$blogurl/setup.php'>setup.php</a> yet!");
 	
-	@mysql_select_db($mysql["database-name"]) or die("Unable to select database");
+	while ($row = $result->fetchArray()) {
+		$content = Parsedown::instance()->text($row["Content"]);
 		
-	$qresult = mysql_query($query) or die("It doesn't look like you've run <a href='$blogurl/setup.php'>setup.php</a> yet!");
-	$numrows = mysql_numrows($qresult);
-	
-	for($i=0;$i<$numrows;$i++){
-		array_push($ids, mysql_result($qresult, $i, "ID"));
-		array_push($titles,mysql_result($qresult,$i,"Title"));
-		array_push($contents,mysql_result($qresult,$i,"Content"));
-		array_push($dates,mysql_result($qresult,$i,"Date"));
-	}
-	
-	for($i=$numrows;$i>0;$i--){
-		$id = $ids[$i];
-		$title = $titles[$i];
-		$date = $dates[$i];
-		$content = $contents[$i];
-		$output .= "<article class='post'><h3 class='post-title'><a href='$blogurl/posts.php?p=$id'>$title</a></h3><div class='post-date'>$date</div><div class='post-content'>$content</div></article>";
+		$output .= "<article class='post'><h3 class='post-title'><a href='$blogurl/posts.php?p={$row['ID']}'>{$row['Title']}</a></h3><div class='post-date'>{$row['Date']}</div><div class='post-content'>$content</div></article>";
 	}
 ?>
