@@ -1,5 +1,6 @@
 <?php
 	include "settings.php";
+	include "blogurl.php";
 
 	preg_match("/^\d+/", $_GET["p"], $matches);
 

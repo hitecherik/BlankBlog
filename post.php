@@ -20,7 +20,7 @@
 	
 	$title = str_replace("'", "''", $_POST["title"]);
 	$content = str_replace("'", "''", $_POST["content"]);
-	$date = date("d/m/y");
+	$date = date($dateformat);
 	
 	if ($_POST["password"] == $password) {
 		$result = $db->exec("INSERT INTO {$sql['table-name']} (ID, Title, Content, Date) VALUES ($id, '$title', '$content', '$date')");

@@ -2,7 +2,6 @@
 	include "fetch.php";
 
 	$pagetitle = $blogtitle;
-	$indexpage = true;
 
 	include "header.php";
 ?>	

@@ -1,5 +1,7 @@
 <?php
 	include "settings.php";
+	include "parsedown/Parsedown.php";
+	include "blogurl.php";
 
 	preg_match("/^\d+/", $_GET["p"], $matches);
 	$id = $matches[0];
@@ -30,7 +32,7 @@
 		</div>
 		
 		<div class="post-content">
-			<?php echo $content; ?>
+			<?php echo Parsedown::instance()->text($content); ?>
 		</div>
 	</article>
 <?php include "footer.php"; ?>

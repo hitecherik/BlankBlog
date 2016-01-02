@@ -2,7 +2,7 @@
 	include "settings.php";
 	
 	$db = new SQLite3($sql["database-file"]);
-	$result = $db->exec("CREATE TABLE {$sql['table-name']} (ID INT UNIQUE, Title VARCHAR(255), Content LONGTEXT, Date VARCHAR(8));") or die("Unable to set up database.");
+	$result = $db->exec("CREATE TABLE {$sql['table-name']} (ID INT UNIQUE, Title VARCHAR(255), Content LONGTEXT, Date VARCHAR(255));") or die("Unable to set up database.");
 
 	$pagetitle = "Setup :: $blogtitle";
 
