@@ -11,7 +11,7 @@ To do this, I haven't included any stylesheets or external libraries and there a
 
 ## Installing BlankBlog
 
-First, open the `settings.php` file. Change these settings:
+First, open the `settings.php` file (if there isn't one, rename `settings-sample.php` to `settings.php`). Change these settings:
 
 - Password - `$password` variable
 - Blog Title - `$blogtitle` variable
@@ -26,7 +26,7 @@ BlankBlog is very easy to build on. There are 14 main PHP files:
 
 - `footer.php` - footer for every page
 - `header.php` - header for every page
-- `blogurl.php` - script that finds the blog's root url
+- `blogurl.php` - script that finds the blog's root url, used in almost every page
 - `index.php` - blog home page
 - `fetch.php` - fetches all blog posts for home page
 - `post-form.php` - form to create post
@@ -36,7 +36,7 @@ BlankBlog is very easy to build on. There are 14 main PHP files:
 - `update.php` - updates post and displays error/success message
 - `delete-form.php` - enter password to delete individual post
 - `delete.php` - deletes post and displays error/success message
-- `settings.php` - all of the MySQL and blog settings, used for every page.
+- `settings.php` - all of the blog settings, used for every page.
 - `setup.php` - run this once to install the blog *(you can delete this later if you want)*
 
 There's also a `settings-sample.php` file in your BlankBlog download. Change the settings in this file and rename it to `settings.php`.
@@ -44,3 +44,5 @@ There's also a `settings-sample.php` file in your BlankBlog download. Change the
 ## Licence
 
 Copyright (c) 2014-2016, Alexander Nielsen. Licenced under the MIT Licence *(see `LICENCE.md` for more details)*.
+
+BlankBlog uses [Parsedown](http://parsedown.org) for Markdown parsing. See `parsedown/LICENCE.txt` for the Parsedown licence.
