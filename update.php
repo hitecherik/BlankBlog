@@ -1,8 +1,8 @@
 <?php 
 	include "settings.php";
 	
-	$title = str_replace("'", "\'", $_POST["title"]);
-	$content = str_replace("'", "\'", $_POST["content"]);
+	$title = str_replace("'", "''", $_POST["title"]);
+	$content = str_replace("'", "''", $_POST["content"]);
 	$date = $_POST["date"];
 	
 	preg_match("/^\d+/", $_GET["id"], $matches);

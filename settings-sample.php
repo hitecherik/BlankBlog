@@ -1,3 +1,4 @@
+
 <?php
 	// Rename this file to settings.php and add your data to the variables
 
@@ -14,5 +15,5 @@
 	$blogtitle = "The Blog of the Century";
 
 	// root url - where the index.php file is located
-	$blogurl = "http://some-random-site.com/";
+	$blogurl = "http://some-random-site.com"; // without trailing slash
 ?>

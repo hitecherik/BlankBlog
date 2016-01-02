@@ -18,8 +18,8 @@
 		$id = $ids[0] + 1;
 	}
 	
-	$title = str_replace("'", "\'", $_POST["title"]);
-	$content = str_replace("'", "\'", $_POST["content"]);
+	$title = str_replace("'", "''", $_POST["title"]);
+	$content = str_replace("'", "''", $_POST["content"]);
 	$date = date("d/m/y");
 	
 	if ($_POST["password"] == $password) {
