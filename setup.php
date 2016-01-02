@@ -1,10 +1,8 @@
 <?php
 	include "settings.php";
-	include "get_mysql.php";
 	
-	get_mysql();
-	$query = "CREATE TABLE `" . $mysql["table-name"] . "` (`ID` INT UNIQUE, `Title` VARCHAR(255),`Content` LONGTEXT,`Date` VARCHAR(8));";
-	$qresult = mysql_query($query);
+	$db = new SQLite3($sql["database-file"]);
+	$result = $db->exec("CREATE TABLE {$sql['table-name']} (ID INT UNIQUE, Title VARCHAR(255), Content LONGTEXT, Date VARCHAR(8));") or die("Unable to set up database.");
 
 	$pagetitle = "Setup :: $blogtitle";
 
@@ -13,7 +11,7 @@
 	<h2>Setup</h2>
 	
 	<?php
-		if($qresult){
+		if($result){
 	?>
 	<p>Success!</p>
 	<?php

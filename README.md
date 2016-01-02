@@ -42,4 +42,4 @@ There's also a `settings-sample.php` file in your BlankBlog download. Change the
 
 ## Licence
 
-**Copyright (c) 2014, Alexander Nielsen, MIT Licence.** See the `LICENCE.md` file for more details.
+**Copyright (c) 2014-2016, Alexander Nielsen, MIT Licence.** See the `LICENCE.md` file for more details.
