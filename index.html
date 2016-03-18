@@ -34,7 +34,9 @@
 		<div class="column large-5 small-12 medium-6">
 			<h2>Download</h2>
 
-			<p>The current version is <strong>1.0</strong>. This version removes MySQL, removes unnecessary settings and adds Markdown support.</p>
+			<p>The current version is <strong>1.1</strong>. This version removes unecessary files.</p>
+			
+			<p>Version <strong>1.0</strong> removed MySQL, removed unnecessary settings and added Markdown support.</p>
 			
 			<a href="http://github.com/hitecherik/BlankBlog/archive/master.zip" class="button large download"><img src="img/download.png" alt=""> Download BlankBlog</a>
 			<a href="http://github.com/hitecherik/BlankBlog" class="button secondary github">View on GitHub</a>
@@ -45,14 +47,11 @@
 		<div class="column large-7 small-12 medium-6">
 			<h2>Building on BlankBlog</h2>
 
-			<p>BlankBlog is very easy to build on. There are 14 main PHP files:</p>
+			<p>BlankBlog is very easy to build on. There are 11 main PHP files:</p>
 
 			<ul>
-				<li><code>footer.php</code> - footer for every page</li>
-				<li><code>header.php</code> - header for every page</li>
-				<li><code>blogurl.php</code> - script that finds the blog&#39;s root url, used in almost every page</li>
+				<li><code>common.php</code> - contains the header, footer and the blog's root url</li>
 				<li><code>index.php</code> - blog home page</li>
-				<li><code>fetch.php</code> - fetches all blog posts for home page</li>
 				<li><code>post-form.php</code> - form to create post</li>
 				<li><code>post.php</code> - submits post and displays error/success message</li>
 				<li><code>posts.php</code> - page for individual blog posts</li>
