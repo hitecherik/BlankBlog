@@ -1,12 +1,11 @@
 <?php
 	include "settings.php";
+	include "common.php";
 	
 	$db = new SQLite3($sql["database-file"]);
-	$result = $db->exec("CREATE TABLE {$sql['table-name']} (ID INT UNIQUE, Title VARCHAR(255), Content LONGTEXT, Date VARCHAR(255));") or die("Unable to set up database.");
+	$result = $db->exec("CREATE TABLE IF NOT EXISTS {$sql['table-name']} (ID INT UNIQUE, Title VARCHAR(255), Content LONGTEXT, Date VARCHAR(255));") or die("Unable to set up database.");
 
-	$pagetitle = "Setup :: $blogtitle";
-
-	include "header.php";
+	echo getHeader("Setup :: $blogtitle");
 ?>
 	<h2>Setup</h2>
 	
@@ -21,4 +20,4 @@
 	<?php
 		}
 	?>
-<?php include "footer.php"; ?>
+<?php echo getFooter(); ?>

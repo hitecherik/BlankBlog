@@ -1,10 +1,8 @@
 <?php
 	include "settings.php";
-	include "blogurl.php";
+	include "common.php";
 
-	$pagetitle = "Create Post :: $blogtitle";
-
-	include "header.php";
+	echo getHeader("Create Post :: $blogtitle");
 ?>
 	<h2>Create Post</h2>
 
@@ -14,4 +12,4 @@
 		<p><label for="password">Password: </label><input type="password" name="password" id="password"></p>
 		<p><button type="submit">Post</button></p>
 	</form>
-<?php include "footer.php"; ?>
+<?php echo getFooter(); ?>

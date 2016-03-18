@@ -1,7 +1,7 @@
 <?php
 	include "settings.php";
 	include "parsedown/Parsedown.php";
-	include "blogurl.php";
+	include "common.php";
 
 	preg_match("/^\d+/", $_GET["p"], $matches);
 	$id = $matches[0];
@@ -18,9 +18,7 @@
 	$content = $result["Content"];
 	$date = $result["Date"];
 
-	$pagetitle = "$title :: $blogtitle";
-
-	include "header.php";
+	echo getHeader("$title :: $blogtitle");
 ?>	
 	<article class="post">
 		<h2 class="post-title"><?php echo $title; ?></h2>
@@ -35,4 +33,4 @@
 			<?php echo Parsedown::instance()->text($content); ?>
 		</div>
 	</article>
-<?php include "footer.php"; ?>
+<?php echo getFooter(); ?>

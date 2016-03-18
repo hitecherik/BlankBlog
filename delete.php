@@ -1,5 +1,6 @@
 <?php 
 	include "settings.php";
+	include "common.php";
 
 	preg_match("/^\d+/", $_GET["p"], $matches);
 
@@ -15,7 +16,7 @@
 
 	$pagetitle = "Delete Post :: $blogtitle";
 	
-	include "header.php";
+	echo getHeader("Delete Post :: {$blogtitle}");
 ?>
 	<h2>Delete Post (ID: <?php echo $id; ?>)</h2>
 	<p>
@@ -29,5 +30,5 @@
 		?>
 	</p>
 <?php
-	include "footer.php";
+	echo getFooter();
 ?>

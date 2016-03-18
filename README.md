@@ -22,13 +22,10 @@ Once you've saved these, open `setup.php` in the browser. If you see a success m
 
 ## Building on BlankBlog
 
-BlankBlog is very easy to build on. There are 14 main PHP files:
+BlankBlog is very easy to build on. There are 11 main PHP files:
 
-- `footer.php` - footer for every page
-- `header.php` - header for every page
-- `blogurl.php` - script that finds the blog's root url, used in almost every page
+- `common.php` - contains the header, footer and the blog's root url
 - `index.php` - blog home page
-- `fetch.php` - fetches all blog posts for home page
 - `post-form.php` - form to create post
 - `post.php` - submits post and displays error/success message
 - `posts.php` - page for individual blog posts

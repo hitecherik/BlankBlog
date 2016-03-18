@@ -1,5 +1,6 @@
 <?php
 	include "settings.php";
+	include "common.php";
 	
 	$db = new SQLite3($sql["database-file"]);
 	
@@ -27,9 +28,8 @@
 	} else {
 		$result = false;
 	}
-
-	$pagetitle = "$title :: $blogtitle";
-	include "header.php";
+	
+	echo getHeader("{$title} :: {$blogtitle}");
 ?>
 	<h2>"<?php echo str_replace("\'", "'", $title); ?>" - post creation</h2>
 	<p>
@@ -41,4 +41,4 @@
 			}
 		?>
 	</p>
-<?php include "footer.php"; ?>
+<?php echo getFooter(); ?>

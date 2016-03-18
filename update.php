@@ -1,5 +1,6 @@
 <?php 
 	include "settings.php";
+	include "common.php";
 	
 	$title = str_replace("'", "''", $_POST["title"]);
 	$content = str_replace("'", "''", $_POST["content"]);
@@ -16,8 +17,7 @@
 		$result = false;
 	}
 
-	$pagetitle = "$title :: $blogtitle";
-	include "header.php";
+	echo getHeader("$title :: $blogtitle");
 ?>
 	<h2>"<?php echo str_replace("\'", "'", $title); ?>" - post update</h2>
 	<p>
@@ -29,4 +29,4 @@
 			}
 		?>
 	</p>
-<?php include "footer.php"; ?>
+<?php echo getFooter(); ?>

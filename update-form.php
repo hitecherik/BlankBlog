@@ -1,6 +1,6 @@
 <?php
 	include "settings.php";
-	include "blogurl.php";
+	include "common.php";
 
 	preg_match("/^\d+/", $_GET["p"], $matches);
 
@@ -18,9 +18,7 @@
 	$content = $result["Content"];
 	$date = $result["Date"];
 
-	$pagetitle = "Update Post :: $blogtitle";
-
-	include "header.php";
+	echo getHeader("Update Post :: $blogtitle");
 ?>
 	<h2>Update Post</h2>
 
@@ -31,4 +29,4 @@
 		<p><label for="password">Password: </label><input type="password" name="password" id="password"></p>
 		<p><button type="submit">Update</button></p>
 	</form>
-<?php include "footer.php"; ?>
+<?php echo getFooter(); ?>

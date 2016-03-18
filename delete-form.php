@@ -1,11 +1,10 @@
 <?php
 	include "settings.php";
-	include "blogurl.php";
+	include "common.php";
 
 	$id = $_GET["p"];
 
-	$pagetitle = "Delete Post :: $blogtitle";
-	include "header.php";
+	echo getHeader("Delete Post :: {$blogtitle}");
 ?>
 	<h2>Delete Post</h2>
 
@@ -13,4 +12,4 @@
 		<p><label for="password">Password: </label><input type="password" name="password" id="password"></p>
 		<p><button type="submit">Delete Post</button></p>
 	</form>
-<?php include "footer.php"; ?>
+<?php echo getFooter(); ?>
