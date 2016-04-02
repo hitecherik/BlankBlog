@@ -22,13 +22,12 @@ Once you've saved these, open the homepage and try to create a post. If it works
 
 ## Building on BlankBlog
 
-BlankBlog is very easy to build on. There are 10 main PHP files:
+BlankBlog is very easy to build on. There are 9 main PHP files:
 
 - `common.php` - contains the header, footer and the blog's root url
-- `index.php` - blog home page
+- `index.php` - blog home page (contains list of posts or individual post)
 - `post-form.php` - form to create post
 - `post.php` - submits post and displays error/success message
-- `posts.php` - page for individual blog posts
 - `update-form.php` - form to edit individual post
 - `update.php` - updates post and displays error/success message
 - `delete-form.php` - enter password to delete individual post

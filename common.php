@@ -20,12 +20,12 @@
 	</header>";
 	}
 	
-	function getFooter() {
+	function getFooter($override=false) {
 		global $blogurl;
 		
 		$footer = "<footer>";
 		
-		if(!preg_match("/index\.php$/", $_SERVER["SCRIPT_FILENAME"])) {
+		if(!preg_match("/index\.php$/", $_SERVER["SCRIPT_FILENAME"]) or $override) {
 			$footer .= "<p><a href=\"{$blogurl}\">Go to homepage</a></p>";
 		}
 		
