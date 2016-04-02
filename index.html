@@ -34,7 +34,7 @@
 		<div class="column large-5 small-12 medium-6">
 			<h2>Download</h2>
 
-			<p>The current version is <strong>1.1</strong>. This version removes unecessary files.</p>
+			<p>The current version is <strong>1.2</strong>. This version removes unecessary files and makes setup easier.</p>
 			
 			<p>Version <strong>1.0</strong> removed MySQL, removed unnecessary settings and added Markdown support.</p>
 			
@@ -47,20 +47,18 @@
 		<div class="column large-7 small-12 medium-6">
 			<h2>Building on BlankBlog</h2>
 
-			<p>BlankBlog is very easy to build on. There are 11 main PHP files:</p>
+			<p>BlankBlog is very easy to build on. There are 9 main PHP files:</p>
 
 			<ul>
 				<li><code>common.php</code> - contains the header, footer and the blog's root url</li>
-				<li><code>index.php</code> - blog home page</li>
+				<li><code>index.php</code> - blog home page (contains list of posts or individual post)</li>
 				<li><code>post-form.php</code> - form to create post</li>
 				<li><code>post.php</code> - submits post and displays error/success message</li>
-				<li><code>posts.php</code> - page for individual blog posts</li>
 				<li><code>update-form.php</code> - form to edit individual post</li>
 				<li><code>update.php</code> - updates post and displays error/success message</li>
 				<li><code>delete-form.php</code> - enter password to delete individual post</li>
 				<li><code>delete.php</code> - deletes post and displays error/success message</li>
 				<li><code>settings.php</code> - all of the blog settings, used for every page</li>
-				<li><code>setup.php</code> - run this once to install the blog <em>(you can delete this later if you want)</em></li>
 			</ul>
 
 			<p>There's also a <code>settings-sample.php</code> file in your BlankBlog download. Change the settings in this file and rename it to <code>settings.php</code>.</p>
@@ -77,7 +75,7 @@
 			
 			<p>Changing the <code>$sql</code> and <code>$dateformat</code> variables is optional, but <strong>don't</strong> delete them from the file.</p>
 
-			<p>Once you&#39;ve saved these, open <code>setup.php</code> in the browser. If you see a success message, you&#39;re good to go!</p>
+			<p>Once you&#39;ve saved these, open the homepage and try to create a post. If it works, then you&#39;re good to go!</p>
 		</div>
 	</div>
 
