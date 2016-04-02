@@ -5,8 +5,8 @@
 	
 	$output = "";
 	
-	$db = new SQLite3($sql["database-file"]);
-	$result = $db->query("SELECT * from {$sql['table-name']} ORDER BY ID DESC") or die("It doesn't look like you've run <a href='$blogurl/setup.php'>setup.php</a> yet!");
+	$db = getDB();
+	$result = $db->query("SELECT * from {$sql['table-name']} ORDER BY ID DESC") or die("Trouble connecting to database.");
 	
 	echo getHeader($blogtitle);
 ?>	

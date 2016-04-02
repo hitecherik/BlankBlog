@@ -6,7 +6,7 @@
 
 	$id = $matches[0];
 	
-	$db = new SQLite3($sql["database-file"]);
+	$db = getDB();
 
 	if((int) $db->querySingle("SELECT COUNT(*) FROM {$sql['table-name']} WHERE ID = $id") == 0) {
 		header("Location: $blogurl");

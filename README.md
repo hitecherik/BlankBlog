@@ -18,11 +18,11 @@ First, open the `settings.php` file (if there isn't one, rename `settings-sample
 
 Changing the `$sql` and `$dateformat` variables is optional, but **don't** delete them from the file.
 
-Once you've saved these, open `setup.php` in the browser. If you see a success message, you're good to go!
+Once you've saved these, open the homepage and try to create a post. If it works, then you're good to go!
 
 ## Building on BlankBlog
 
-BlankBlog is very easy to build on. There are 11 main PHP files:
+BlankBlog is very easy to build on. There are 10 main PHP files:
 
 - `common.php` - contains the header, footer and the blog's root url
 - `index.php` - blog home page
@@ -34,7 +34,6 @@ BlankBlog is very easy to build on. There are 11 main PHP files:
 - `delete-form.php` - enter password to delete individual post
 - `delete.php` - deletes post and displays error/success message
 - `settings.php` - all of the blog settings, used for every page.
-- `setup.php` - run this once to install the blog *(you can delete this later if you want)*
 
 There's also a `settings-sample.php` file in your BlankBlog download. Change the settings in this file and rename it to `settings.php`.
 

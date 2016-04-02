@@ -2,7 +2,7 @@
 	include "settings.php";
 	include "common.php";
 	
-	$db = new SQLite3($sql["database-file"]);
+	$db = getDB();
 	
 	$id = 1;
 	

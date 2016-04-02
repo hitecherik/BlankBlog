@@ -8,7 +8,7 @@
 	$pass = $_POST["password"];
 
 	if ($password == $pass) {
-		$db = new SQLite3($sql["database-file"]);
+		$db = getDB();
 		$result = $db->exec("DELETE FROM {$sql['table-name']} WHERE ID = $id");
 	} else {
 		$result = false;

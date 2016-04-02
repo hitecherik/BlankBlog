@@ -11,7 +11,7 @@
 	$id = $matches[0];
 	
 	if($_POST["password"] == $password) {
-		$db = new SQLite3($sql["database-file"]);
+		$db = getDB();
 		$result = $db->exec("UPDATE {$sql['table-name']} SET Title = '$title', Content = '$content', Date = '$date' WHERE ID = $id");
 	} else {
 		$result = false;

@@ -36,4 +36,14 @@
 		
 		return $footer;
 	}
+	
+	function getDB() {
+		global $sql;
+		
+		$db = new SQLite3($sql["database-file"]);
+		
+		$db->exec("CREATE TABLE IF NOT EXISTS {$sql['table-name']} (ID INT UNIQUE, Title VARCHAR(255), Content LONGTEXT, Date VARCHAR(255));");
+		
+		return $db;
+	}
 ?>
